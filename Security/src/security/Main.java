@@ -18,6 +18,8 @@ public class Main {
         try {
             System.out.println("MD5 hash: " + Hasher.generateMd5String(string));
             System.out.println("SHA256 hash: " + Hasher.generateSha256String(string));
+            byte[] salt = Hasher.getSalt();
+            System.out.println("SHA256 with salt: " + Hasher.generateWithSalt(string, salt));
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
